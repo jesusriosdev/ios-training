@@ -23,7 +23,7 @@ var 😀 = "happy"
 
 print("number of current login attemps is: \(currentLoginAttemps) of a maximum number of: \(maximumNumberOfLoginAttempts)")
 
-let age : UInt8 = 30
+//let age : UInt8 = 30
 let minValueU = UInt8.min // 2 * 0 - 1
 let maxValueU = UInt8.max // 2 * 8 -1
 
@@ -69,3 +69,18 @@ let integerPi = Int(piNum)
 typealias AudioSample = UInt16
 var maxAmplitude = AudioSample.max // UInt16.max
 
+let orangeAreAOrange = true
+let foodIsDelicious = false
+
+var isAged : Bool
+isAged = true
+if isAged {
+    print("You can enter")
+} else {
+    print("You cannot enter")
+}
+
+var age = 30
+if age >= 18 {
+    print("Yeah, you cant enter")
+}
