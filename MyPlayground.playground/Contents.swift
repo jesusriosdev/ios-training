@@ -15,3 +15,8 @@ var welcomeMessage : String
 welcomeMessage = "Hi, what's up?"
 
 var red, green, blue : Double
+
+let π = 3.141592
+var 😀 = "happy"
+
+😀 = "happier"
