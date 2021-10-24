@@ -84,3 +84,20 @@ var age = 30
 if age >= 18 {
     print("Yeah, you cant enter")
 }
+
+// Tuples
+let http404error = (404, "Not found.")
+let (statusCode, statusMessage) = http404error
+print("Code: \(statusCode)")
+print("Message: \(statusMessage)")
+
+let (justStatusCode, _) = http404error
+print("Just the code: \(justStatusCode)")
+
+print("Code is: \(http404error.0)")
+print("Message is: \(http404error.1)")
+
+let http200Status = (statusCode: 200, description: "OK")
+print("The code is: \(http200Status.statusCode)")
+print("The message is: \(http200Status.description)")
+
