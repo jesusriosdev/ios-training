@@ -129,3 +129,36 @@ if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secon
     
     print("\(firstNumber) < \(secondNumber) < 100")
 }
+
+let possibleString: String? = "An optional string"
+
+let forcedString: String = possibleString!
+
+let assumedString: String! = "hola hola hola"
+let implicitString: String = assumedString
+
+func canThrowError() throws {
+    
+}
+
+do {
+    
+    try canThrowError()
+    
+    // no error here
+} catch {
+    
+    // error here
+}
+
+func makeASandwich() throws {
+    
+}
+
+do {
+    
+    try makeASandwich()
+    // no error
+} catch {
+    // error
+}
