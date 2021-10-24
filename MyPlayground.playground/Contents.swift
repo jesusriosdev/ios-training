@@ -53,3 +53,15 @@ let justMoreThanAMillion = 1_000_000.000_000_1
 
 //let cannotBeNegative: UInt8 = -1
 //let tooBig: UInt8.max + 1
+
+
+let twoThousand: UInt16 = 2_000
+let one: UInt8 = 1
+//let twoThousandAndOne = twoThousand + one
+let twoThousandAndOne = twoThousand + UInt16(one)
+
+let three = 3
+let decimalNumber = 0.14159
+let piNum = Double(three) + decimalNumber
+
+let integerPi = Int(piNum)
