@@ -65,3 +65,7 @@ let decimalNumber = 0.14159
 let piNum = Double(three) + decimalNumber
 
 let integerPi = Int(piNum)
+
+typealias AudioSample = UInt16
+var maxAmplitude = AudioSample.max // UInt16.max
+
