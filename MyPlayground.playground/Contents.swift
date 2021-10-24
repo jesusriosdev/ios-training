@@ -101,3 +101,18 @@ let http200Status = (statusCode: 200, description: "OK")
 print("The code is: \(http200Status.statusCode)")
 print("The message is: \(http200Status.description)")
 
+let possibleAge = "30"
+let convertedAge = Int(possibleAge) // Int?
+
+var serverResponseCode: Int? = 404
+serverResponseCode = nil
+
+//var surveyAnswer: String?
+//surveyAnswer = "30"
+//print(surveyAnswer)
+
+if convertedAge != nil {
+    print("Age not null: \(convertedAge!)")
+} else {
+    print("Age is null")
+}
