@@ -37,3 +37,19 @@ let meaningOfLife = 42 // Int
 let pi = 3.14159 // Double
 let anotherPi = 3 + 0.14159 // Double
 
+
+let decimalInteger = 17 // 1*1- + 7
+let binaryInteger = 0b10001 //
+let octalInteger = 0o21
+let hexadecimalInteger = 0x11 // 1*16^1 + 1*16^0
+
+let decimalDouble = 12.1875
+let exponentDouble = 1.21875e1
+let hexadecimalDouble = 0xC.3p0
+
+
+let oneMillion = 1_000_000
+let justMoreThanAMillion = 1_000_000.000_000_1
+
+//let cannotBeNegative: UInt8 = -1
+//let tooBig: UInt8.max + 1
