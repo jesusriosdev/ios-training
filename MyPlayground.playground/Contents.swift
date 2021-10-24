@@ -107,12 +107,25 @@ let convertedAge = Int(possibleAge) // Int?
 var serverResponseCode: Int? = 404
 serverResponseCode = nil
 
-//var surveyAnswer: String?
-//surveyAnswer = "30"
+var surveyAnswer: String?
+surveyAnswer = "30"
 //print(surveyAnswer)
 
 if convertedAge != nil {
     print("Age not null: \(convertedAge!)")
 } else {
     print("Age is null")
+}
+
+if let actualAnswer = surveyAnswer {
+    // If it reach here, surveyAnswer is not nil
+    print("Value of \(surveyAnswer) is \(actualAnswer)")
+} else {
+    // If it reach here, surveyAnswer is nil
+    print("nil")
+}
+
+if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    
+    print("\(firstNumber) < \(secondNumber) < 100")
 }
