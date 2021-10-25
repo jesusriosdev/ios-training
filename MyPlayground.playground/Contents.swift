@@ -170,12 +170,12 @@ let age2 = -5
 //... continues
 
 //assert(age2 >= 0, "The age of a person cannot be negative")
-precondition(age2 >= 0, "The age of a person cannot be negative")
+//precondition(age2 >= 0, "The age of a person cannot be negative")
 
 if(age2 > 10) {
     print("OK")
 } else if(age2 >= 0){
     print("tiny")
 } else {
-    assertionFailure("The age o a person cannot be negative")
+//    assertionFailure("The age o a person cannot be negative")
 }
