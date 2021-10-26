@@ -385,5 +385,53 @@ switch stillAnotherPoint {
 case (let distance, 0), (0, let distance):
     print("se halla sobre el eje, a distancia \(distance) del origen")
 default:
-    print("")
+    break
+}
+
+// Control transfer: continue, break, fallthrough, return, throw.
+let sentence = "Great minds think similar"
+var filteredSentence = String()
+let charactersToRemove: [Character] = ["a","e","i","o","u"]
+for ch in sentence {
+    print(ch)
+    
+    if(charactersToRemove.contains(ch)) {
+        // DO NOTHING
+        continue
+    }
+    filteredSentence.append(ch)
+    
+    if(ch == "d") {
+        break
+    }
+}
+filteredSentence
+
+let integerToDescribe = 5
+var description = "Num \(integerToDescribe) is"
+switch integerToDescribe {
+case 2,3,5,7,11,13,17,19:
+    description += " a prime number and"
+    fallthrough
+default:
+    description += " an int number"
+}
+
+var people = ["name": "Jesus", "age": 30, "isMale": true] as [String : Any]
+
+func testUserValidation (person: [String : Any]) {
+   guard let surname = people["name"] else {
+        print("Name unknown")
+        return
+    }
+    print(surname)
+}
+
+testUserValidation(person: people)
+
+
+if #available(iOS 12, macOS 10.12, *) {
+    // Exec actions with iOS12+, macOS 10.12+
+} else {
+    // Old code.
 }
