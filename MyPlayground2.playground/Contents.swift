@@ -192,3 +192,98 @@ for codeunit in ghost.unicodeScalars {
     print(codeunit, terminator: " ")
 }
 print(" ")
+
+// ARRAYS
+var someInts = [Int]()
+someInts.count
+someInts.append(31)
+someInts.count
+someInts = []
+
+var someDoubles = Array(repeating: 3.141592, count: 7)
+someDoubles.count
+
+var moreDoubles = Array(repeating: 2.5, count: 4)
+var aLotOfDoubles = someDoubles + moreDoubles
+aLotOfDoubles.count
+
+var shoppingList: [String] = ["Apples", "Bananas", "Limes", "Tortillas", "Cookies"]
+shoppingList.count
+
+shoppingList[1]
+shoppingList.isEmpty
+
+for item in shoppingList {
+    print(item)
+}
+
+for (idx, item) in shoppingList.enumerated() {
+    print("\(idx + 1). \(item)")
+}
+
+// SETS
+var letters = Set<Character>() // SETS DONT HAVE ORDER
+letters.count
+letters.insert("A")
+letters.insert("N")
+letters.insert("H")
+letters
+
+var favoritegames: Set<String> = ["Gears","GoW","TLOU2","Apex"]
+favoritegames.count
+if favoritegames.isEmpty {
+    print("No games")
+}
+
+favoritegames.insert("AC")
+if let removedGame = favoritegames.remove("AC") {
+    print("eLIMINATED: \(removedGame)")
+}
+
+if favoritegames.contains("GoW") {
+    print("Great game")
+}
+
+for game in favoritegames.sorted() {
+    print(game)
+}
+
+let oddDigits: Set = [1,3,5,7,9]
+let evenDigits: Set = [0,2,4,6,8]
+let primeNumbers: Set = [2,3,5,7]
+
+oddDigits.union(evenDigits).sorted()
+oddDigits.intersection(evenDigits).sorted()
+evenDigits.intersection(primeNumbers).sorted()
+oddDigits.subtracting(primeNumbers).sorted()
+oddDigits.symmetricDifference(primeNumbers).sorted()
+
+// DICTIONARIES
+var nameOfIntegers = [Int : String]()
+nameOfIntegers[15] = "fifteen"
+nameOfIntegers = [:]
+
+var airports: [String : String] = ["YYZ" : "Toronto", "DUB" : "Dublin", "PMI" : "Palma de Mallorca"]
+airports
+
+if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB") {
+    print(oldValue)
+}
+airports
+
+if let airportName = airports["DUB"] {
+    airportName
+}
+
+//airports["PMI"] = nil
+//airports
+//
+//if let removedAiport = airports.removeValue(forKey: "DUB") {
+//    removedAiport
+//}
+
+for (key, value) in airports {
+    print("\(key) \(value)")
+}
+
+let aiportNames = [String](airports.values.sorted())
