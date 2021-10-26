@@ -1,6 +1,6 @@
 import UIKit
 
-var greeting = "Hello, playground"
+var greeting2 = "Hello, playground"
 
 let (x,y) = (1,2)
 print(x)
@@ -105,3 +105,90 @@ if (hasMoney || hasInvitation) {
 } else {
     print("DENIED")
 }
+
+
+let multine = """
+    Hola\
+    Soy\
+    Jesus
+    """
+
+print(multine)
+
+
+var emptyString = String()
+
+if emptyString.isEmpty {
+    print("empty")
+}
+
+emptyString += "not empty anymore"
+
+if emptyString.isEmpty == false {
+    print("empty")
+}
+
+let name = "Jesus"
+for ch in name {
+    print(ch)
+}
+
+let exclamationMark: Character = "!"
+let nameChars: [Character] = ["J","e","s","u","s"]
+var nameString = String(nameChars)
+print(nameString)
+
+let compoundName = "Jesus " + "Rios"
+nameString.append(exclamationMark)
+print(nameString)
+
+let greeting = "Hi there!"
+greeting[greeting.startIndex]
+//print(greeting.endIndex)
+//greeting[greeting.endIndex]
+greeting[greeting.index(before: greeting.endIndex)]
+
+for idx in greeting.indices {
+    print ("\(greeting[idx]) - \(idx)")
+}
+
+for idx in greeting.indices {
+    print ("\(greeting[idx]) ", terminator: "")
+}
+
+var welcome = "Hi"
+welcome.insert("!", at: welcome.endIndex)
+print(welcome)
+welcome.insert(contentsOf: " Howare you?", at: welcome.index(before: welcome.endIndex))
+print(welcome)
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+print(welcome)
+
+let range2 = welcome.index(welcome.endIndex, offsetBy: -8)..<welcome.endIndex
+
+welcome.removeSubrange(range2)
+print(welcome)
+
+
+let index = welcome.firstIndex(of: "i") ?? greeting.endIndex
+let firstPart = welcome[..<index]
+let newString = String(firstPart)
+
+welcome = "How"
+welcome.hasPrefix("How")
+welcome.hasSuffix("How")
+
+
+let ghost = "Ghost! 👻"
+for codeunit in ghost.utf8 {
+    print(codeunit, terminator: " ")
+}
+print(" ")
+for codeunit in ghost.utf16 {
+    print(codeunit, terminator: " ")
+}
+print(" ")
+for codeunit in ghost.unicodeScalars {
+    print(codeunit, terminator: " ")
+}
+print(" ")
