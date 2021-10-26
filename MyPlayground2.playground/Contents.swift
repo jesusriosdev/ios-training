@@ -287,3 +287,103 @@ for (key, value) in airports {
 }
 
 let aiportNames = [String](airports.values.sorted())
+
+
+// CONTROL FLOW
+
+let names2 = ["Jesus R", "Ana M", "Jessica G"]
+for name in names2 {
+    print(name)
+}
+
+var base = 2
+var pwoer = 10
+var answer = 1
+for _ in 0...10 {
+    answer *= base
+    print(answer)
+}
+
+var hour = 5
+var minutes = 60
+var interval = 5
+for tick in stride(from: 0, to: minutes, by: interval) {
+    print("\(hour):\(tick)")
+}
+
+var i = 0
+while i <= 10  {
+    i += 1
+}
+print(i)
+
+repeat {
+    i += 1
+} while i <= 10
+print(i)
+
+
+let someCharacter: Character = "a"
+switch someCharacter {
+    case "A", "a":
+        print("First letter")
+    
+    
+    case "Z", "z":
+        print("Last letter")
+default:
+    print("Some other letter")
+}
+
+let moons = 62
+let phare = "Moons in Saturn"
+let naturalCount: String
+switch moons {
+    case 0:
+        naturalCount = "There's no"
+    case 1..<5:
+        naturalCount = "There's a few"
+    default:
+        naturalCount = "There is a lot of"
+}
+
+print("\(naturalCount) \(phare)")
+
+let somePoint = (5, 5)
+switch somePoint {
+case (0,0):
+    print("Origin point: \(somePoint)")
+//case (_,0):
+//    print("Point \(somePoint) is on X")
+//case (0,_):
+//    print("Point \(somePoint) is on Y")
+case (-2...2, -2...2):
+    print("Point \(somePoint) is on Q4")
+    
+case (let x, 0):
+    print("X value is: \(x)")
+    
+case let (x,y) where x == y:
+    print("Point (x = y)")
+case let (x,y):
+    print("Point (\(x), \(y))")
+}
+
+let someCharacter2: Character = "e"
+switch someCharacter2 {
+case "a", "e", "i", "o", "u":
+    print("VOCAL")
+    
+case "q", "w", "r", "t", "y":
+    print("CONSONANTES")
+default:
+    print("UNKNOWN")
+}
+
+let stillAnotherPoint = (9,0)
+switch stillAnotherPoint {
+case (let distance, 0), (0, let distance):
+    print("se halla sobre el eje, a distancia \(distance) del origen")
+default:
+    print("")
+}
