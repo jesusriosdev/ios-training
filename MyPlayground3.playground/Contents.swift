@@ -139,6 +139,7 @@ printMathResult(addTwoInts, 5, 9)
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
     
     func stepForward(_ input: Int) -> Int {
+        
         return input + 1
     }
 
@@ -252,8 +253,10 @@ instance.x
 
 enum SomeEnumerator {
     // Definition
-    
+    case hola
+    case hola2
 }
+SomeEnumerator.hola
 
 enum CompassPoint: String {
     case north
