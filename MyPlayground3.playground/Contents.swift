@@ -246,8 +246,97 @@ print(instance.x)
 instance.dosomething()
 print(instance.x)
 
-
-
 completionHandlers.count
 completionHandlers.first?()
 instance.x
+
+enum SomeEnumerator {
+    // Definition
+    
+}
+
+enum CompassPoint: String {
+    case north
+    case south
+    case east
+    case west
+}
+
+enum Planet: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+
+var directionToGo = CompassPoint.east
+directionToGo = .north
+
+switch directionToGo {
+case .north:
+    print("NORTH")
+case .south:
+    print("SOUTH")
+case .east:
+    print("SOUTH")
+case .west:
+    print("SOUTH")
+}
+
+let somePlanet = Planet.earth
+switch somePlanet {
+case .earth:
+    print("SAFE")
+default:
+    print("NOT SAFE")
+}
+
+enum Beverages: CaseIterable {
+    case coffe, tea, juice, redbull
+}
+let numberOfChoices = Beverages.allCases.count
+for beverage in Beverages.allCases {
+    print(beverage)
+}
+
+enum BarCode {
+    case upc (Int, Int, Int, Int)
+    case qrCode (String)
+}
+
+var productBarcode = BarCode.upc(8, 85909, 51226, 3)
+//productBarcode = .qrCode("ASDFGHJKL")
+print(productBarcode)
+
+switch productBarcode {
+case .upc(let numberSystem, let manufacturer, let product, let check):
+    print("UPC \(numberSystem), \(manufacturer), \(product), \(check)")
+case .qrCode(let productCode):
+    print("QR: \(productCode)")
+}
+
+enum ASCIIControlCharacter: Character {
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+enum Status: Int {
+    case Active = 1
+    case Inactive = 2
+    case Cancelled = 3
+}
+
+let earthOrder = Planet.earth.rawValue
+let northDirection = CompassPoint.north.rawValue
+
+let possiblePlanet = Planet(rawValue: 5)
+let planetPosition = 4
+if let anyPlanet = Planet(rawValue: planetPosition) {
+    switch anyPlanet {
+    
+    case .earth:
+        print("SAFE")
+    default:
+        print("NO PLANET")
+    }
+} else {
+    print("NO PLANET!!!")
+}
