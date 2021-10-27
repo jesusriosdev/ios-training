@@ -92,14 +92,14 @@ func mean(_ numbers: Double...) -> Double {
 
 mean(1,2,3,4,5)
 
-var x = 5
+var xx = 5
 func addOne(number: Int) {
     var number2 = number
     number2 += 1
     print(number2)
 }
 
-addOne(number: x)
+addOne(number: xx)
 
 func swapTwoints(_ a: inout Int, _ b: inout Int) {
     let tempA = a
@@ -158,3 +158,96 @@ let moveNearZero = chooseStepFunction(backward: value > 0)
 
 print("0...")
 
+let names = ["XJesusssss", "Pittyy", "Ana"]
+
+func backward(_ s1: String, _ s2: String) -> Bool {
+    return s1 > s2
+}
+backward("Jesus", "Ivan")
+
+
+var reversedNames0 = names.sorted()
+var reversedNames = names.sorted(by: backward)
+
+reversedNames = names.sorted(by: { s1, s2 in s1 > s2 })
+reversedNames = names.sorted(by: { $0 > $1 })
+reversedNames = names.sorted(by: >)
+
+func someFunctionThatTakesaAClosure(closure: () -> Void) {
+    
+}
+
+someFunctionThatTakesaAClosure(closure: {
+    //
+})
+someFunctionThatTakesaAClosure {
+    //
+}
+
+let digitNames = [0: "Cero", 1: "Uno", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco", 6: "Seis", 7: "Siete", 8: "Ocho", 9: "Nueve"]
+let numbers = [123, 234, 345]
+let numberStrings = numbers.map { (number) -> String in
+    
+    var number = number // RECONVIERTE
+    var output = ""
+    
+    repeat {
+        output = "\(digitNames[number % 10]!) \(output)"
+        number /= 10
+    } while number > 0
+    return output
+}
+
+print(numberStrings)
+
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var runningTotal = 0
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+let incrementByTen = makeIncrementer(forIncrement: 10)
+incrementByTen()
+incrementByTen()
+incrementByTen()
+
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+
+incrementByTen()
+
+var completionHandlers: [() -> Void] = []
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    completionHandlers.append(completionHandler)
+}
+completionHandlers.count
+
+func someFunctionWithNoneEscapingClosure(closure: () -> Void) {
+    closure()
+}
+
+class SomeClass {
+    var x = 10
+    func dosomething() {
+        someFunctionWithEscapingClosure {
+            self.x = 100
+        }
+        someFunctionWithNoneEscapingClosure {
+            x = 200
+        }
+    }
+}
+
+let instance = SomeClass()
+print(instance.x)
+instance.dosomething()
+print(instance.x)
+
+
+
+completionHandlers.count
+completionHandlers.first?()
+instance.x
